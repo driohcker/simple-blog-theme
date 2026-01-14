@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= page.title ? page.title + ' - ' + config.title : config.title %></title>
+  <meta name="description" content="<%= page.description ? page.description : config.description %>">
+  
+  <!-- 引入主题样式 -->
+  <link rel="stylesheet" href="<%- url_for('/css/style.css') %>">
+  
+  <!-- 引入主题脚本 -->
+  <script src="<%- url_for('/js/main.js') %>"></script>
+</head>
+<body>
+  <!-- 头部 -->
+  <%- partial('_partial/header') %>
+  
+  <!-- 主体内容 -->
+  <main class="container">
+    <div class="content-wrapper">
+      <!-- 侧边栏 -->
+      <%- partial('_partial/sidebar') %>
+      
+      <!-- 主要内容区域 -->
+      <div class="main-content">
+        <%- body %>
+      </div>
+    </div>
+  </main>
+  
+  <!-- 底部 -->
+  <%- partial('_partial/footer') %>
+</body>
+</html>

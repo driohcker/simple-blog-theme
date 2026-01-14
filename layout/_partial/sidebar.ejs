@@ -1,0 +1,55 @@
+<% if (theme.sidebar.enable) { %>
+<aside class="sidebar <%= theme.sidebar.position %>">
+  <!-- 作者信息 -->
+  <div class="widget author-widget">
+    <% if (theme.author.avatar) { %>
+    <div class="author-avatar">
+      <img src="<%- url_for(theme.author.avatar) %>" alt="<%= theme.author.name %>">
+    </div>
+    <% } %>
+    <h3 class="author-name"><%= theme.author.name %></h3>
+    <% if (theme.author.bio) { %>
+    <p class="author-bio"><%= theme.author.bio %></p>
+    <% } %>
+  </div>
+  
+  <!-- 分类列表 -->
+  <div class="widget category-widget">
+    <h3 class="widget-title">分类</h3>
+    <ul class="category-list">
+      <% site.categories.each(function(category) { %>
+      <li class="category-item">
+        <a href="<%- url_for(category.path) %>">
+          <%= category.name %> <span class="count"><%= category.length %></span>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+  
+  <!-- 标签云 -->
+  <!-- <div class="widget tag-widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="tag-cloud">
+      <% site.tags.each(function(tag) { %>
+      <a href="<%- url_for(tag.path) %>" class="tag-item" style="font-size: <%= tag.length * 3 + 10 %>px;">
+        <%= tag.name %>
+      </a>
+      <% }) %>
+    </div>
+  </div> -->
+  
+  <!-- 最新文章 -->
+  <div class="widget recent-posts-widget">
+    <h3 class="widget-title">最新文章</h3>
+    <ul class="recent-posts">
+      <% site.posts.limit(5).each(function(post) { %>
+      <li class="recent-post-item">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <span class="date"><%= date(post.date, config.date_format) %></span>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</aside>
+<% } %>

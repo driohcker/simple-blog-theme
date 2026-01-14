@@ -1,0 +1,24 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- 版权信息 -->
+      <div class="copyright">
+        <%= theme.footer.copyright %>
+      </div>
+      
+      <!-- 支持信息 -->
+      <div class="powered">
+        <%= theme.footer.powered %>
+      </div>
+      
+      <!-- 社交链接 -->
+      <% if (theme.social && Object.keys(theme.social).length > 0) { %>
+      <div class="social-links">
+        <% for (var item in theme.social) { %>
+        <a href="<%= theme.social[item] %>" target="_blank" rel="noopener noreferrer"><%= item %></a>
+        <% } %>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</footer>

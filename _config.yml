@@ -1,0 +1,43 @@
+# 主题配置文件
+# 这里可以定义主题的各种配置项
+
+# 网站基本信息
+
+site:
+  title: ""
+  subtitle: ""
+  description: ""
+  author: author.name
+
+# 作者信息
+author:
+  name: ""
+  bio: ""
+  avatar: ""
+
+# 导航菜单
+menu:
+  主页: /
+  归档: /archives
+  分类: /categories
+  #标签: /tags
+  关于: /about
+
+# 侧边栏
+sidebar:
+  position: left
+  display: always
+  enable: true
+
+# 页脚
+footer:
+  copyright: ""
+  powered_by: true
+
+# 评论系统
+comment:
+  enable: false
+
+# 社交链接
+social:
+  #github: "https://github.com/driohcker"

@@ -1,0 +1,23 @@
+<div class="categories">
+  <!-- 页面标题 -->
+  <h1 class="archive-title">
+    文章分类
+  </h1>
+  
+  <!-- 分类列表 -->
+  <div class="archive-list">
+    <% site.categories.each(function(category) { %>
+    <div class="archive-item">
+      <!-- 分类链接 -->
+      <a href="<%- url_for(category.path) %>" class="archive-item-title">
+        <%= category.name %>
+      </a>
+      
+      <!-- 分类文章数量 -->
+      <span class="archive-item-date">
+        <%= category.length %> 篇文章
+      </span>
+    </div>
+    <% }) %>
+  </div>
+</div>

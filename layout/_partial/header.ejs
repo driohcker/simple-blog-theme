@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- 网站标题 -->
+      <div class="site-title">
+        <a href="<%- url_for('/') %>"><%= config.title %></a>
+        <% if (config.subtitle) { %>
+        <p class="subtitle"><%= config.subtitle %></p>
+        <% } %>
+      </div>
+      
+      <!-- 移动端菜单切换按钮 -->
+      <button class="menu-toggle">
+        <span class="toggle-icon">☰</span>
+      </button>
+      
+      <!-- 导航菜单 -->
+      <nav class="nav-menu">
+        <ul>
+          <% for (var item in theme.menu) { %>
+          <li class="menu-item<%= page.path === theme.menu[item] ? ' active' : '' %>">
+            <a href="<%- url_for(theme.menu[item]) %>"><%= item %></a>
+          </li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

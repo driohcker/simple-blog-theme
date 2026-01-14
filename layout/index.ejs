@@ -1,0 +1,70 @@
+<div class="home">
+  <!-- 文章列表 -->
+  <div class="post-list">
+    <% page.posts.each(function(post) { %>
+    <article class="post-item">
+      <!-- 文章标题 -->
+      <h2 class="post-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </h2>
+      
+      <!-- 文章元信息 -->
+      <div class="post-meta">
+        <span class="post-date"><%= date(post.date, config.date_format) %></span>
+        
+        <!-- 分类 -->
+        <% if (post.categories && post.categories.length > 0) { %>
+        <span class="post-categories">
+          <% post.categories.each(function(category) { %>
+          <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+          <% }) %>
+        </span>
+        <% } %>
+        
+        <!-- 标签 -->
+        <% if (post.tags && post.tags.length > 0) { %>
+        <span class="post-tags">
+          <% post.tags.each(function(tag) { %>
+          <a href="<%- url_for(tag.path) %>">#<%= tag.name %></a>
+          <% }) %>
+        </span>
+        <% } %>
+      </div>
+      
+      <!-- 文章摘要 -->
+      <div class="post-excerpt">
+        <% if (post.excerpt) { %>
+          <%- post.excerpt %>
+        <% } else { %>
+          <%- strip_html(post.content).substring(0, 150) + '...' %>
+        <% } %>
+      </div>
+      
+      <!-- 阅读更多链接 -->
+      <div class="post-read-more">
+        <a href="<%- url_for(post.path) %>">阅读更多</a>
+      </div>
+    </article>
+    <% }) %>
+  </div>
+  
+  <!-- 分页 -->
+  <% if (page.total > 1) { %>
+  <div class="pagination">
+    <% if (page.prev) { %>
+    <a href="<%- url_for(page.prev_link) %>" class="pagination-prev">上一页</a>
+    <% } %>
+    
+    <% for (var i = 1; i <= page.total; i++) { %>
+      <a href="<%- url_for(i === 1 ? config.archive_dir : config.archive_dir + '/page/' + i) %>" 
+         class="pagination-item <%= i === page.current ? 'active' : '' %>">
+        <%= i %>
+      </a>
+    <% } %>
+    
+    <% if (page.next) { %>
+    <a href="<%- url_for(page.next_link) %>" class="pagination-next">下一页</a>
+    <% } %>
+  </div>
+  <% } %>
+</div>

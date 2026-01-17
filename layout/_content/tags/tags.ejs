@@ -1,0 +1,16 @@
+<div class="tags">
+  <!-- 页面标题 -->
+  <h1 class="archive-title">
+    文章标签
+  </h1>
+  
+  <!-- 标签云 -->
+  <div class="tag-cloud">
+    <% site.tags.each(function(tag) { %>
+    <a href="<%- url_for(tag.path) %>" class="tag-item" style="font-size: <%= tag.posts.length * 3 + 10 %>px;">
+      <%= tag.name %> <span class="count"><%= tag.posts.length %></span>
+    </a>
+    <% }) %>
+  </div>
+  
+</div>

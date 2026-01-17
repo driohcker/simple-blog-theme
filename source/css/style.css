@@ -181,22 +181,87 @@ body {
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
+
 }
 
 .tag-item {
   text-decoration: none;
-  color: #666;
-  background-color: #f0f0f0;
-  padding: 4px 12px;
-  border-radius: 15px;
+  color: #495057;
+  background-color: #e9ecef;
+  padding: 6px 16px;
+  border-radius: 20px;
   font-size: 14px;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .tag-item:hover {
   background-color: #007bff;
   color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* 标签页特定样式 */
+.tags {
+  padding: 20px 0;
+}
+
+/* 标签名称样式 */
+.tag-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #343a40;
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+}
+
+.tag-name a {
+  color: #343a40;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.tag-name a:hover {
+  color: #007bff;
+}
+
+/* 标签下的文章列表 */
+.tag-posts {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.tag-post-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.tag-post-item:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+.tag-post-title {
+  color: #343a40;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.tag-post-title:hover {
+  color: #007bff;
+}
+
+.tag-post-date {
+  color: #6c757d;
+  font-size: 13px;
+  margin-left: 10px;
 }
 
 /* 最新文章 */

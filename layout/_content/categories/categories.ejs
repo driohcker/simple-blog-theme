@@ -6,16 +6,16 @@
   
   <!-- 分类列表 -->
   <div class="archive-list">
-    <% site.categories.each(function(category) { %>
+    <% site.categories.each(function(onecategory) { %>
     <div class="archive-item">
       <!-- 分类链接 -->
-      <a href="<%- url_for(category.path) %>" class="archive-item-title">
-        <%= category.name %>
+      <a href="<%- url_for(onecategory.path) %>" class="archive-item-title">
+        <%= onecategory.name %>
       </a>
       
       <!-- 分类文章数量 -->
       <span class="archive-item-date">
-        <%= category.length %> 篇文章
+        <%= onecategory.length %> 篇文章
       </span>
     </div>
     <% }) %>

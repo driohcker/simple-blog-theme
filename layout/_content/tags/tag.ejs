@@ -1,12 +1,13 @@
+<!-- 单个标签页面 -->
 <div class="archive">
   <!-- 页面标题 -->
   <h1 class="archive-title">
-    <%= page.category %> 分类
+    <%= page.tag %> 标签
   </h1>
   
-  <!-- 分类文章列表 -->
+  <!-- 标签文章列表 -->
   <div class="archive-list">
-    <% if (page.posts.length > 0) { %>
+    <% if (page.posts && page.posts.length > 0) { %>
       <% page.posts.each(function(post) { %>
       <article class="archive-item">
         <!-- 文章链接 -->
@@ -21,7 +22,7 @@
       </article>
       <% }) %>
     <% } else { %>
-      <p class="no-posts">该分类下暂无文章</p>
+      <p class="no-posts">该标签下暂无文章</p>
     <% } %>
   </div>
   

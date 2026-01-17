@@ -13,14 +13,14 @@ site:
 author:
   name: ""
   bio: ""
-  avatar: ""
+  avatar: "images/head.png"
 
 # 导航菜单
 menu:
   主页: /
   归档: /archives
   分类: /categories
-  #标签: /tags
+  标签: /tags
   关于: /about
 
 # 侧边栏

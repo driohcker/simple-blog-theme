@@ -2,6 +2,10 @@
 
 一个简洁、轻量的 Hexo 博客主题，支持分类、标签、归档、关于页面等常见功能。
 
+## 展示
+<img width="1919" height="919" alt="2" src="https://github.com/user-attachments/assets/b04dadf3-705f-4b6a-b7d7-262da9069fa3" />
+
+
 ## ✨ 特性
 - 简洁清爽的界面设计
 - 支持分类、标签、归档页面
